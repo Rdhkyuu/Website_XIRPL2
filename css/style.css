@@ -1,0 +1,125 @@
+:root
+{
+--primary:#62bd25;
+--bg :rgb(235, 235, 89);
+}
+*
+{
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+    outline :none;
+    border: none;
+    text-decoration: none;
+}
+body 
+{
+    font-family: 'Fjalla One', 'sans-serif';
+    background-color: var(--bg);
+    color: white;
+
+}
+/* navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgba(98, 189, 37 ,0.8);
+    border-bottom: 1px solid var(--primary);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    /* jika ingin navbarnya tetap di atas maka menggunakan */
+    z-index: 9999;
+}
+.navbar .navbar-logo {
+font-size: 3rem;
+font-weight: 800;
+color: #fff;
+font-style: italic;
+}
+.navbar .navbar-logo span {
+    color: yellow;
+}
+
+.navbar .navbar-nav a {
+    color: #fff;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--bg);
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--bg);
+    transform: scaleX(0);
+    transition:  0.2s linear;
+}
+ .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.5);
+ }
+
+ .navbar .navbar-ekstra {
+    color: #fff;
+    margin: 0 0.5rem;
+
+ }
+
+ .navbar .navbar-ekstra a:hover {
+    color: var(--bg);
+ }
+
+ #menu {
+    display: none;
+ }
+
+
+ /* media queris */
+
+ /* laptop */
+
+ @media (max-width: 1366px){
+    html {
+        font-size: 75%;
+    }
+ }
+
+ /* tablet */
+
+ @media (max-width: 768px) {
+    html{
+        font-size: 62.5%;
+    }
+
+    #menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #fff;
+        width: 30rem;
+        height: 100vh;
+    }
+
+    .navbar .navbar-nav.active {
+        right:0;
+    }
+ }
+
+ /* mobile hp */
+ @media (max-width: 450px) {
+    html{
+        font-size: 55%;
+    }
+ }
